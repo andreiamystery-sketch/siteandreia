@@ -50,7 +50,7 @@
     }
 
     .logo img {
-      height: 160px;
+      height: 150px;
       object-fit: contain;
       cursor: pointer;
       transition: 0.3s;
@@ -122,13 +122,8 @@
     }
 
     .hero-btn {
-      border: 1px solid var(--dourado);
       color: var(--branco);
       padding: 14px 32px;
-      letter-spacing: 2px;
-      text-decoration: none;
-      font-size: 12px;
-      transition: 0.3s;
     }
 
     .btn:hover,
@@ -139,27 +134,13 @@
     }
 
     @keyframes heroEntrance {
-      from {
-        opacity: 0;
-        transform: scale(1.04);
-        filter: brightness(0.7);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-        filter: brightness(1);
-      }
+      from { opacity: 0; transform: scale(1.04); filter: brightness(0.7); }
+      to { opacity: 1; transform: scale(1); filter: brightness(1); }
     }
 
     @keyframes buttonEntrance {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     section {
@@ -236,29 +217,6 @@
       align-items: stretch;
     }
 
-    .product-card.featured {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
-      background: linear-gradient(135deg, #ffffff, #fbf7ef);
-    }
-
-    .product-card.featured img {
-      height: 520px;
-    }
-
-    .product-card.featured .product-info {
-      text-align: center;
-      padding: 30px 24px 34px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .product-card.featured h3 {
-      font-size: 34px;
-    }
-
     .product-card {
       background: var(--branco);
       border: 1px solid rgba(201, 167, 78, 0.22);
@@ -266,6 +224,14 @@
       overflow: hidden;
       transition: 0.4s;
       position: relative;
+    }
+
+    .product-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff, #fbf7ef);
     }
 
     .product-card::before {
@@ -295,6 +261,11 @@
       display: block;
       background: #ffffff;
       transition: 0.6s;
+      cursor: pointer;
+    }
+
+    .product-card.featured img {
+      height: 520px;
     }
 
     .product-card:hover img {
@@ -303,7 +274,13 @@
 
     .product-info {
       text-align: center;
-      padding: 28px 24px 32px;
+      padding: 30px 24px 34px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .product-card.featured h3 {
+      font-size: 34px;
     }
 
     .product-info small {
@@ -345,12 +322,11 @@
 
     .story img {
       width: 100%;
-      max-width: 560px;
-      height: 420px;
+      max-width: 620px;
+      height: auto;
       object-fit: contain;
-      background: #050505;
-      padding: 10px;
-      border: 1px solid rgba(201, 167, 78, 0.28);
+      display: block;
+      border: 1px solid rgba(201, 167, 78, 0.35);
       box-shadow: 0 35px 90px rgba(0,0,0,0.55);
       animation: campaignImage 1.4s ease both;
     }
@@ -370,36 +346,17 @@
       animation: campaignText 1.2s ease 0.45s both;
     }
 
-    .story .eyebrow {
-      animation: campaignText 1.2s ease 0.1s both;
-    }
-
-    .story .btn {
-      animation: campaignText 1.2s ease 0.65s both;
-    }
+    .story .eyebrow { animation: campaignText 1.2s ease 0.1s both; }
+    .story .btn { animation: campaignText 1.2s ease 0.65s both; }
 
     @keyframes campaignImage {
-      from {
-        opacity: 0;
-        transform: translateX(-35px) scale(0.97);
-        filter: brightness(0.65);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-        filter: brightness(1);
-      }
+      from { opacity: 0; transform: translateX(-35px) scale(0.97); filter: brightness(0.65); }
+      to { opacity: 1; transform: translateX(0) scale(1); filter: brightness(1); }
     }
 
     @keyframes campaignText {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .dark .btn {
@@ -438,13 +395,8 @@
       font-size: 15px;
     }
 
-    .feature:hover h3 {
-      color: var(--dourado);
-    }
-
-    .feature:hover p {
-      color: var(--dourado-claro);
-    }
+    .feature:hover h3 { color: var(--dourado); }
+    .feature:hover p { color: var(--dourado-claro); }
 
     .cart-box,
     .contact-box {
@@ -511,9 +463,7 @@
       text-decoration: none;
     }
 
-    footer a:hover {
-      color: var(--branco);
-    }
+    footer a:hover { color: var(--branco); }
 
     .footer-links {
       display: flex;
@@ -712,23 +662,11 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    .product-card img {
-      cursor: pointer;
-    }
-
     @media (max-width: 1100px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .product-card.featured {
-        grid-column: span 2;
-        grid-template-columns: 1fr;
-      }
-
-      .product-card.featured img {
-        height: 420px;
-      }
+      .products { grid-template-columns: repeat(2, 1fr); }
+      .product-card.featured { grid-column: span 2; grid-template-columns: 1fr; }
+      .product-card.featured img { height: 420px; }
+      .product-detail-box { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 820px) {
@@ -738,33 +676,16 @@
         gap: 16px;
       }
 
-      .logo img {
-        height: 115px;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      nav a {
-        font-size: 11px;
-        padding: 8px 10px;
-      }
-
-      .hero {
-        background-position: center;
-        padding: 0 7% 55px;
-      }
-
-      .story {
-        grid-template-columns: 1fr;
-      }
-
-      .story img {
-        height: auto;
-        max-height: 420px;
-        object-fit: contain;
-      }
+      .logo img { height: 115px; }
+      nav { justify-content: center; }
+      nav a { font-size: 11px; padding: 8px 10px; }
+      .hero { background-position: center; padding: 0 7% 55px; }
+      .products { grid-template-columns: 1fr; }
+      .product-card.featured { grid-column: span 1; }
+      .product-card.featured img, .product-card img { height: 360px; }
+      .story { grid-template-columns: 1fr; }
+      .detail-main-image { height: 380px; }
+      .detail-thumbnails { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -811,77 +732,8 @@
       <div class="gold-line"></div>
       <p class="section-subtitle">Explore todas as peças disponíveis, organizadas por categoria.</p>
 
-      <div class="category-nav">
-        <button class="active" onclick="filterCategory('todos', this)">Todos</button>
-        <button onclick="filterCategory('aneis', this)">Anéis</button>
-        <button onclick="filterCategory('colares', this)">Colares</button>
-        <button onclick="filterCategory('pulseiras', this)">Pulseiras</button>
-        <button onclick="filterCategory('brincos', this)">Brincos</button>
-        <button onclick="filterCategory('conjuntos', this)">Conjuntos</button>
-      </div>
-
-      <div class="category-section" data-category="aneis">
-        <h3 class="category-title">Anéis</h3>
-        <div class="products">
-          <article class="product-card featured">
-            <img src="imagens/anel-encantos-tradicional.jpg" alt="Anel Encantos Tradicional" onclick="openGallery('anelEncantos', 0)">
-            <div class="product-info">
-              <small>Anel</small>
-              <h3>Anel Encantos Tradicional</h3>
-              <p>Peça clássica e elegante para todos os dias. Clique na imagem para ver mais fotografias.</p>
-              <div class="price">€49,90</div>
-              <button class="btn" onclick="addToCart('Anel Encantos Tradicional', 49.90)">Adicionar</button>
-            </div>
-          </article>
-          <article class="product-card"><img src="imagens/anel-prestige-com-tres-linhas.jpg" alt="Anel Prestige Três Linhas"><div class="product-info"><small>Anel</small><h3>Anel Prestige Três Linhas</h3><p>Design sofisticado com presença marcante.</p><div class="price">€54,90</div><button class="btn" onclick="addToCart('Anel Prestige Três Linhas', 54.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/anel-prestige-com-zirconias.jpg" alt="Anel Prestige com Zircónias"><div class="product-info"><small>Anel</small><h3>Anel Prestige com Zircónias</h3><p>Brilho elegante com acabamento premium.</p><div class="price">€59,90</div><button class="btn" onclick="addToCart('Anel Prestige com Zircónias', 59.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/anel-prestige-em-aco-inoxidavel.jpg" alt="Anel Prestige em Aço Inoxidável"><div class="product-info"><small>Anel</small><h3>Anel Prestige em Aço Inoxidável</h3><p>Peça resistente com estilo intemporal.</p><div class="price">€44,90</div><button class="btn" onclick="addToCart('Anel Prestige em Aço Inoxidável', 44.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/anel-prestige-em-aco-inoxidavel 2.jpg" alt="Anel Prestige em Aço Inoxidável II"><div class="product-info"><small>Anel</small><h3>Anel Prestige em Aço Inoxidável II</h3><p>Versão elegante com acabamento moderno.</p><div class="price">€44,90</div><button class="btn" onclick="addToCart('Anel Prestige em Aço Inoxidável II', 44.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/solitario-eternity-com-moissanite.jpg" alt="Solitário Eternity com Moissanite"><div class="product-info"><small>Anel</small><h3>Solitário Eternity com Moissanite</h3><p>Peça luminosa com brilho refinado.</p><div class="price">€69,90</div><button class="btn" onclick="addToCart('Solitário Eternity com Moissanite', 69.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/solitario-eternity-com-moissanite 2.jpg" alt="Solitário Eternity com Moissanite II"><div class="product-info"><small>Anel</small><h3>Solitário Eternity com Moissanite II</h3><p>Brilho clássico para momentos especiais.</p><div class="price">€69,90</div><button class="btn" onclick="addToCart('Solitário Eternity com Moissanite II', 69.90)">Adicionar</button></div></article>
-        </div>
-      </div>
-
-      <div class="category-section" data-category="colares">
-        <h3 class="category-title">Colares</h3>
-        <div class="products">
-          <article class="product-card featured"><img src="imagens/colar-delicate-com-estrelas.jpg" alt="Colar Delicate com Estrelas"><div class="product-info"><small>Colar</small><h3>Colar Delicate com Estrelas</h3><p>Design delicado com detalhe luminoso.</p><div class="price">€49,90</div><button class="btn" onclick="addToCart('Colar Delicate com Estrelas', 49.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-encantos-mao-de-fatima.jpg" alt="Colar Encantos Mão de Fátima"><div class="product-info"><small>Colar</small><h3>Colar Encantos Mão de Fátima</h3><p>Peça simbólica com toque elegante.</p><div class="price">€44,90</div><button class="btn" onclick="addToCart('Colar Encantos Mão de Fátima', 44.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-encantos-portugal-mini.jpg" alt="Colar Encantos Portugal Mini"><div class="product-info"><small>Colar</small><h3>Colar Encantos Portugal Mini</h3><p>Elegância discreta com inspiração portuguesa.</p><div class="price">€44,90</div><button class="btn" onclick="addToCart('Colar Encantos Portugal Mini', 44.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-encantos-rainha-pequeno.jpg" alt="Colar Encantos Rainha Pequeno"><div class="product-info"><small>Colar</small><h3>Colar Encantos Rainha Pequeno</h3><p>Peça feminina com presença sofisticada.</p><div class="price">€46,90</div><button class="btn" onclick="addToCart('Colar Encantos Rainha Pequeno', 46.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-encantos-tradicional.jpg" alt="Colar Encantos Tradicional"><div class="product-info"><small>Colar</small><h3>Colar Encantos Tradicional</h3><p>Clássico, elegante e versátil.</p><div class="price">€47,90</div><button class="btn" onclick="addToCart('Colar Encantos Tradicional', 47.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-eternity-com-moissanite.jpg" alt="Colar Eternity com Moissanite"><div class="product-info"><small>Colar</small><h3>Colar Eternity com Moissanite</h3><p>Brilho refinado com acabamento luxuoso.</p><div class="price">€74,90</div><button class="btn" onclick="addToCart('Colar Eternity com Moissanite', 74.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-prestige-brilhante-quadrado.jpg" alt="Colar Prestige Brilhante Quadrado"><div class="product-info"><small>Colar</small><h3>Colar Prestige Brilhante Quadrado</h3><p>Design elegante com brilho geométrico.</p><div class="price">€59,90</div><button class="btn" onclick="addToCart('Colar Prestige Brilhante Quadrado', 59.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-prestige-com-zirconias.jpg" alt="Colar Prestige com Zircónias"><div class="product-info"><small>Colar</small><h3>Colar Prestige com Zircónias</h3><p>Peça sofisticada com brilho delicado.</p><div class="price">€58,90</div><button class="btn" onclick="addToCart('Colar Prestige com Zircónias', 58.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-prestige-com-zirconias 2.jpg" alt="Colar Prestige com Zircónias II"><div class="product-info"><small>Colar</small><h3>Colar Prestige com Zircónias II</h3><p>Variação elegante com acabamento premium.</p><div class="price">€58,90</div><button class="btn" onclick="addToCart('Colar Prestige com Zircónias II', 58.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/colar-unissexo-prestige-com-zirconias.jpg" alt="Colar Unissexo Prestige com Zircónias"><div class="product-info"><small>Colar</small><h3>Colar Unissexo Prestige</h3><p>Peça moderna e versátil.</p><div class="price">€62,90</div><button class="btn" onclick="addToCart('Colar Unissexo Prestige', 62.90)">Adicionar</button></div></article>
-        </div>
-      </div>
-
-      <div class="category-section" data-category="pulseiras">
-        <h3 class="category-title">Pulseiras</h3>
-        <div class="products">
-          <article class="product-card featured"><img src="imagens/pulseira-rigida-encantos-tradicional.jpg" alt="Pulseira Rígida Encantos Tradicional"><div class="product-info"><small>Pulseira</small><h3>Pulseira Rígida Encantos Tradicional</h3><p>Pulseira elegante com estrutura sofisticada.</p><div class="price">€57,90</div><button class="btn" onclick="addToCart('Pulseira Rígida Encantos Tradicional', 57.90)">Adicionar</button></div></article>
-        </div>
-      </div>
-
-      <div class="category-section" data-category="brincos">
-        <h3 class="category-title">Brincos</h3>
-        <div class="products">
-          <article class="product-card featured"><img src="imagens/argola-prestige-aco-e-zirconias.jpg" alt="Argola Prestige Aço e Zircónias"><div class="product-info"><small>Brincos</small><h3>Argola Prestige Aço e Zircónias</h3><p>Argolas elegantes com brilho sofisticado.</p><div class="price">€39,90</div><button class="btn" onclick="addToCart('Argola Prestige Aço e Zircónias', 39.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/brincos-eternity-com-moissanite.jpg" alt="Brincos Eternity com Moissanite"><div class="product-info"><small>Brincos</small><h3>Brincos Eternity com Moissanite</h3><p>Brilho delicado para um visual requintado.</p><div class="price">€49,90</div><button class="btn" onclick="addToCart('Brincos Eternity com Moissanite', 49.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/brincos-prestige-margarida-e-zirconias.jpg" alt="Brincos Prestige Margarida e Zircónias"><div class="product-info"><small>Brincos</small><h3>Brincos Prestige Margarida</h3><p>Design feminino com brilho elegante.</p><div class="price">€36,90</div><button class="btn" onclick="addToCart('Brincos Prestige Margarida', 36.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/brincos-prestige-retangulo.jpg" alt="Brincos Prestige Retângulo"><div class="product-info"><small>Brincos</small><h3>Brincos Prestige Retângulo</h3><p>Design moderno com linhas elegantes.</p><div class="price">€34,90</div><button class="btn" onclick="addToCart('Brincos Prestige Retângulo', 34.90)">Adicionar</button></div></article>
-          <article class="product-card"><img src="imagens/brincos-prestige-retangulos.jpg" alt="Brincos Prestige Retângulos"><div class="product-info"><small>Brincos</small><h3>Brincos Prestige Retângulos</h3><p>Peça marcante com acabamento sofisticado.</p><div class="price">€35,90</div><button class="btn" onclick="addToCart('Brincos Prestige Retângulos', 35.90)">Adicionar</button></div></article>
-        </div>
-      </div>
-
-      <div class="category-section" data-category="conjuntos">
-        <h3 class="category-title">Conjuntos</h3>
-        <div class="products">
-          <article class="product-card featured"><img src="imagens/conjunto-eternity-com-moissanite.jpg" alt="Conjunto Eternity com Moissanite"><div class="product-info"><small>Conjunto</small><h3>Conjunto Eternity com Moissanite</h3><p>Conjunto sofisticado para ocasiões especiais.</p><div class="price">€89,90</div><button class="btn" onclick="addToCart('Conjunto Eternity com Moissanite', 89.90)">Adicionar</button></div></article>
-        </div>
-      </div>
+      <div class="category-nav" id="categoryNav"></div>
+      <div id="productsContainer"></div>
     </section>
 
     <section id="marca" class="story dark">
@@ -927,16 +779,6 @@
     </section>
   </main>
 
-  <div id="galleryOverlay" class="gallery-overlay" onclick="closeGalleryOnBackground(event)">
-    <div class="gallery-box">
-      <button class="gallery-close" onclick="closeGallery()">×</button>
-      <button class="gallery-prev" onclick="changeGalleryImage(-1)">‹</button>
-      <img id="galleryImage" src="" alt="Galeria Andrea's Mystery">
-      <button class="gallery-next" onclick="changeGalleryImage(1)">›</button>
-      <div id="galleryCaption" class="gallery-caption"></div>
-    </div>
-  </div>
-
   <div id="productDetailOverlay" class="product-detail-overlay" onclick="closeProductDetailBackground(event)">
     <div class="product-detail-box">
       <button class="product-detail-close" onclick="closeProductDetail()">×</button>
@@ -970,148 +812,202 @@
     const cart = [];
     const contactEmail = 'andreiamystery@gmail.com';
 
-    const productDetails = {
-      'Anel Encantos Tradicional': {
-        category: 'Anel',
+    const categories = [
+      { key: 'todos', label: 'Todos' },
+      { key: 'aneis', label: 'Anéis' },
+      { key: 'colares', label: 'Colares' },
+      { key: 'brincos', label: 'Brincos' },
+      { key: 'conjuntos', label: 'Conjuntos' }
+    ];
+
+    function imagensProduto(pasta, produto, total) {
+      return Array.from(
+        { length: total },
+        (_, i) => `imagens/${pasta}/${produto}/${produto}-${i + 1}.png`
+      );
+    }
+
+    const products = [
+      {
+        name: 'Anel Duplo Eternidade',
+        category: 'aneis',
+        categoryLabel: 'Anel',
+        price: 69.90,
+        description: 'Anel elegante com dupla linha de brilho sofisticado.',
+        featured: true,
+        images: imagensProduto('eternity-premium-pack', 'anel-duplo-eternidade', 4)
+      },
+      {
+        name: 'Anel Single Eternidade',
+        category: 'aneis',
+        categoryLabel: 'Anel',
+        price: 59.90,
+        description: 'Design minimalista com brilho refinado e presença delicada.',
+        images: imagensProduto('eternity-premium-pack', 'anel-single-eternidade', 4)
+      },
+      {
+        name: 'Colar Prestige com Zircónias',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 58.90,
+        description: 'Colar sofisticado com zircónias e brilho delicado.',
+        featured: true,
+        images: imagensProduto('colares-correntes-premium', 'colar-prestige-com-zirconias', 4)
+      },
+      {
+        name: 'Colar Prestige Dourado',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 58.90,
+        description: 'Versão dourada com acabamento premium e brilho elegante.',
+        images: imagensProduto('colares-correntes-premium', 'colar-prestige-com-zirconias-dourado', 4)
+      },
+      {
+        name: 'Colar Unissexo Prestige',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 62.90,
+        description: 'Colar moderno e versátil, com presença sofisticada.',
+        images: imagensProduto('colares-correntes-premium', 'colar-unissexo-prestige', 4)
+      },
+      {
+        name: 'Colar Delicate Estrelas',
+        category: 'colares',
+        categoryLabel: 'Colar',
         price: 49.90,
-        description: 'Peça clássica e elegante, ideal para combinar com colares e pulseiras da linha Encantos.',
-        images: [
-          'imagens/anel-encantos-tradicional.jpg',
-          'imagens/anel-prestige-com-tres-linhas.jpg',
-          'imagens/anel-prestige-com-zirconias.jpg',
-          'imagens/anel-prestige-em-aco-inoxidavel.jpg'
-        ]
+        description: 'Colar delicado com detalhe luminoso e feminino.',
+        images: imagensProduto('colares-final-pack', 'colar-delicate-com-estrelas', 4)
       },
-      'Anel Prestige Três Linhas': {
-        category: 'Anel', price: 54.90,
-        description: 'Design sofisticado de três linhas com presença forte e acabamento luminoso.',
-        images: ['imagens/anel-prestige-com-tres-linhas.jpg', 'imagens/anel-prestige-com-zirconias.jpg', 'imagens/anel-prestige-em-aco-inoxidavel.jpg']
+      {
+        name: 'Colar Mão de Amor',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 44.90,
+        description: 'Peça simbólica elegante com acabamento dourado.',
+        images: imagensProduto('colares-final-pack', 'colar-mao-de-amor', 4)
       },
-      'Anel Prestige com Zircónias': {
-        category: 'Anel', price: 59.90,
-        description: 'Anel de brilho elegante com zircónias, pensado para ocasiões especiais.',
-        images: ['imagens/anel-prestige-com-zirconias.jpg', 'imagens/anel-prestige-com-tres-linhas.jpg', 'imagens/anel-prestige-em-aco-inoxidavel 2.jpg']
+      {
+        name: 'Colar Rainha',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 46.90,
+        description: 'Design feminino com presença sofisticada.',
+        images: imagensProduto('colares-final-pack', 'colar-rainha', 4)
       },
-      'Anel Prestige em Aço Inoxidável': {
-        category: 'Anel', price: 44.90,
-        description: 'Peça resistente em aço inoxidável, com estilo intemporal e brilho discreto.',
-        images: ['imagens/anel-prestige-em-aco-inoxidavel.jpg', 'imagens/anel-prestige-em-aco-inoxidavel 2.jpg', 'imagens/anel-prestige-com-zirconias.jpg']
+      {
+        name: 'Colar Encanto',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 47.90,
+        description: 'Clássico, elegante e versátil.',
+        images: imagensProduto('colares-premium-pack', 'colar-encanto', 4)
       },
-      'Anel Prestige em Aço Inoxidável II': {
-        category: 'Anel', price: 44.90,
-        description: 'Variação elegante com acabamento moderno, perfeita para um visual premium.',
-        images: ['imagens/anel-prestige-em-aco-inoxidavel 2.jpg', 'imagens/anel-prestige-em-aco-inoxidavel.jpg', 'imagens/anel-prestige-com-tres-linhas.jpg']
+      {
+        name: 'Colar Eterno',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: 74.90,
+        description: 'Brilho refinado com acabamento luxuoso.',
+        images: imagensProduto('colares-premium-pack', 'colar-eterno', 4)
       },
-      'Solitário Eternity com Moissanite': {
-        category: 'Anel', price: 69.90,
-        description: 'Solitário luminoso com moissanite, pensado para momentos especiais.',
-        images: ['imagens/solitario-eternity-com-moissanite.jpg', 'imagens/solitario-eternity-com-moissanite 2.jpg']
+      {
+        name: 'Brincos Prestige Linha',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: 39.90,
+        description: 'Brincos elegantes com linha vertical de brilho sofisticado.',
+        featured: true,
+        images: imagensProduto('brincos-final-pack', 'brincos-prestige-linha', 4)
       },
-      'Solitário Eternity com Moissanite II': {
-        category: 'Anel', price: 69.90,
-        description: 'Brilho clássico com presença delicada e acabamento refinado.',
-        images: ['imagens/solitario-eternity-com-moissanite 2.jpg', 'imagens/solitario-eternity-com-moissanite.jpg']
+      {
+        name: 'Brincos Prestige Margarida',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: 36.90,
+        description: 'Design floral feminino com brilho delicado.',
+        images: imagensProduto('brincos-final-pack', 'brincos-prestige-margarida-e-zirconias', 4)
       },
-
-      'Colar Delicate com Estrelas': {
-        category: 'Colar', price: 49.90,
-        description: 'Colar delicado com estrelas, ideal para um brilho subtil e feminino.',
-        images: ['imagens/colar-delicate-com-estrelas.jpg', 'imagens/colar-encantos-mao-de-fatima.jpg', 'imagens/colar-encantos-portugal-mini.jpg']
+      {
+        name: 'Brincos Prestige Retângulos',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: 35.90,
+        description: 'Peça marcante com design moderno e acabamento sofisticado.',
+        images: imagensProduto('brincos-final-pack', 'brincos-prestige-retangulos', 4)
       },
-      'Colar Encantos Mão de Fátima': {
-        category: 'Colar', price: 44.90,
-        description: 'Colar simbólico com Mão de Fátima e acabamento elegante.',
-        images: ['imagens/colar-encantos-mao-de-fatima.jpg', 'imagens/colar-encantos-rainha-pequeno.jpg', 'imagens/colar-encantos-tradicional.jpg']
-      },
-      'Colar Encantos Portugal Mini': {
-        category: 'Colar', price: 44.90,
-        description: 'Peça discreta de inspiração portuguesa, elegante e versátil.',
-        images: ['imagens/colar-encantos-portugal-mini.jpg', 'imagens/colar-encantos-tradicional.jpg', 'imagens/colar-delicate-com-estrelas.jpg']
-      },
-      'Colar Encantos Rainha Pequeno': {
-        category: 'Colar', price: 46.90,
-        description: 'Colar feminino com presença sofisticada e toque tradicional.',
-        images: ['imagens/colar-encantos-rainha-pequeno.jpg', 'imagens/colar-encantos-mao-de-fatima.jpg', 'imagens/colar-encantos-tradicional.jpg']
-      },
-      'Colar Encantos Tradicional': {
-        category: 'Colar', price: 47.90,
-        description: 'Clássico e versátil, pensado para acompanhar diferentes estilos.',
-        images: ['imagens/colar-encantos-tradicional.jpg', 'imagens/anel-encantos-tradicional.jpg', 'imagens/pulseira-rigida-encantos-tradicional.jpg']
-      },
-      'Colar Eternity com Moissanite': {
-        category: 'Colar', price: 74.90,
-        description: 'Colar com brilho refinado e acabamento luxuoso.',
-        images: ['imagens/colar-eternity-com-moissanite.jpg', 'imagens/conjunto-eternity-com-moissanite.jpg', 'imagens/solitario-eternity-com-moissanite.jpg']
-      },
-      'Colar Prestige Brilhante Quadrado': {
-        category: 'Colar', price: 59.90,
-        description: 'Design geométrico com brilho elegante e moderno.',
-        images: ['imagens/colar-prestige-brilhante-quadrado.jpg', 'imagens/colar-prestige-com-zirconias.jpg', 'imagens/colar-prestige-com-zirconias 2.jpg']
-      },
-      'Colar Prestige com Zircónias': {
-        category: 'Colar', price: 58.90,
-        description: 'Peça sofisticada com zircónias e brilho delicado.',
-        images: ['imagens/colar-prestige-com-zirconias.jpg', 'imagens/colar-prestige-com-zirconias 2.jpg', 'imagens/colar-prestige-brilhante-quadrado.jpg']
-      },
-      'Colar Prestige com Zircónias II': {
-        category: 'Colar', price: 58.90,
-        description: 'Variação elegante com acabamento premium e brilho controlado.',
-        images: ['imagens/colar-prestige-com-zirconias 2.jpg', 'imagens/colar-prestige-com-zirconias.jpg', 'imagens/colar-unissexo-prestige-com-zirconias.jpg']
-      },
-      'Colar Unissexo Prestige': {
-        category: 'Colar', price: 62.90,
-        description: 'Colar unissexo moderno e versátil, com acabamento marcante.',
-        images: ['imagens/colar-unissexo-prestige-com-zirconias.jpg', 'imagens/colar-prestige-com-zirconias.jpg', 'imagens/colar-prestige-brilhante-quadrado.jpg']
-      },
-
-      'Pulseira Rígida Encantos Tradicional': {
-        category: 'Pulseira', price: 57.90,
-        description: 'Pulseira rígida elegante com estrutura sofisticada.',
-        images: ['imagens/pulseira-rigida-encantos-tradicional.jpg', 'imagens/anel-encantos-tradicional.jpg', 'imagens/colar-encantos-tradicional.jpg']
-      },
-
-      'Argola Prestige Aço e Zircónias': {
-        category: 'Brincos', price: 39.90,
-        description: 'Argolas elegantes em aço com zircónias, discretas e luminosas.',
-        images: ['imagens/argola-prestige-aco-e-zirconias.jpg', 'imagens/brincos-prestige-retangulo.jpg', 'imagens/brincos-prestige-retangulos.jpg']
-      },
-      'Brincos Eternity com Moissanite': {
-        category: 'Brincos', price: 49.90,
-        description: 'Brincos com moissanite e brilho delicado para um visual requintado.',
-        images: ['imagens/brincos-eternity-com-moissanite.jpg', 'imagens/solitario-eternity-com-moissanite.jpg', 'imagens/colar-eternity-com-moissanite.jpg']
-      },
-      'Brincos Prestige Margarida': {
-        category: 'Brincos', price: 36.90,
-        description: 'Design feminino com inspiração floral e brilho elegante.',
-        images: ['imagens/brincos-prestige-margarida-e-zirconias.jpg', 'imagens/brincos-prestige-retangulo.jpg', 'imagens/brincos-prestige-retangulos.jpg']
-      },
-      'Brincos Prestige Retângulo': {
-        category: 'Brincos', price: 34.90,
-        description: 'Brincos modernos com linhas retangulares e acabamento premium.',
-        images: ['imagens/brincos-prestige-retangulo.jpg', 'imagens/brincos-prestige-retangulos.jpg', 'imagens/argola-prestige-aco-e-zirconias.jpg']
-      },
-      'Brincos Prestige Retângulos': {
-        category: 'Brincos', price: 35.90,
-        description: 'Peça marcante com brilho sofisticado e presença elegante.',
-        images: ['imagens/brincos-prestige-retangulos.jpg', 'imagens/brincos-prestige-retangulo.jpg', 'imagens/brincos-prestige-margarida-e-zirconias.jpg']
-      },
-
-      'Conjunto Eternity com Moissanite': {
-        category: 'Conjunto', price: 89.90,
-        description: 'Conjunto sofisticado com moissanite para ocasiões especiais.',
-        images: ['imagens/conjunto-eternity-com-moissanite.jpg', 'imagens/colar-eternity-com-moissanite.jpg', 'imagens/brincos-eternity-com-moissanite.jpg', 'imagens/solitario-eternity-com-moissanite.jpg']
+      {
+        name: 'Conjunto Eternidade',
+        category: 'conjuntos',
+        categoryLabel: 'Conjunto',
+        price: 89.90,
+        description: 'Conjunto sofisticado para ocasiões especiais.',
+        featured: true,
+        images: imagensProduto('eternity-premium-pack', 'conjunto-eternidade', 4)
       }
-    };
+    ];
+
+    function formatPrice(price) {
+      return `€${price.toFixed(2).replace('.', ',')}`;
+    }
+
+    function createCategoryNav() {
+      const nav = document.getElementById('categoryNav');
+      nav.innerHTML = categories.map((category, index) => `
+        <button class="${index === 0 ? 'active' : ''}" onclick="filterCategory('${category.key}', this)">${category.label}</button>
+      `).join('');
+    }
+
+    function renderProducts(activeCategory = 'todos') {
+      const container = document.getElementById('productsContainer');
+      const visibleCategories = categories.filter(category => category.key !== 'todos');
+
+      container.innerHTML = visibleCategories.map(category => {
+        const categoryProducts = products.filter(product => product.category === category.key);
+        if (categoryProducts.length === 0) return '';
+
+        const hidden = activeCategory !== 'todos' && activeCategory !== category.key ? 'display:none;' : '';
+
+        return `
+          <div class="category-section" data-category="${category.key}" style="${hidden}">
+            <h3 class="category-title">${category.label}</h3>
+            <div class="products">
+              ${categoryProducts.map(product => `
+                <article class="product-card ${product.featured ? 'featured' : ''}">
+                  <img src="${product.images[0]}" alt="${product.name}" onclick="openProductDetail('${product.name.replace(/'/g, "\\'")}')">
+                  <div class="product-info">
+                    <small>${product.categoryLabel}</small>
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <div class="price">${formatPrice(product.price)}</div>
+                    <button class="btn" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price})">Adicionar</button>
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCategory(category, button) {
+      document.querySelectorAll('.category-nav button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      renderProducts(category);
+    }
+
+    function getProductByName(name) {
+      return products.find(product => product.name === name);
+    }
 
     function openProductDetail(name) {
-      const product = productDetails[name];
+      const product = getProductByName(name);
       if (!product) return;
 
-      document.getElementById('detailCategory').textContent = product.category;
-      document.getElementById('detailName').textContent = name;
+      document.getElementById('detailCategory').textContent = product.categoryLabel;
+      document.getElementById('detailName').textContent = product.name;
       document.getElementById('detailDescription').textContent = product.description;
-      document.getElementById('detailPrice').textContent = `€${product.price.toFixed(2).replace('.', ',')}`;
-      document.getElementById('detailAddButton').onclick = () => addToCart(name, product.price);
+      document.getElementById('detailPrice').textContent = formatPrice(product.price);
+      document.getElementById('detailAddButton').onclick = () => addToCart(product.name, product.price);
 
       const mainImage = document.getElementById('detailMainImage');
       const thumbnails = document.getElementById('detailThumbnails');
@@ -1121,7 +1017,7 @@
       product.images.forEach((src, index) => {
         const thumb = document.createElement('img');
         thumb.src = src;
-        thumb.alt = name;
+        thumb.alt = product.name;
         if (index === 0) thumb.classList.add('active');
         thumb.onclick = () => {
           mainImage.src = src;
@@ -1141,23 +1037,11 @@
     }
 
     function closeProductDetailBackground(event) {
-      if (event.target.id === 'productDetailOverlay') {
-        closeProductDetail();
-      }
+      if (event.target.id === 'productDetailOverlay') closeProductDetail();
     }
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeProductDetail();
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.product-card').forEach(card => {
-        const image = card.querySelector('img');
-        const title = card.querySelector('h3')?.textContent?.trim();
-        if (image && title && productDetails[title]) {
-          image.onclick = () => openProductDetail(title);
-        }
-      });
     });
 
     function addToCart(name, price) {
@@ -1172,10 +1056,10 @@
       if (cart.length === 0) {
         cartItems.innerHTML = 'O carrinho está vazio.';
       } else {
-        cartItems.innerHTML = cart.map(item => `<div class="cart-item"><span>${item.name}</span><strong>€${item.price.toFixed(2).replace('.', ',')}</strong></div>`).join('');
+        cartItems.innerHTML = cart.map(item => `<div class="cart-item"><span>${item.name}</span><strong>${formatPrice(item.price)}</strong></div>`).join('');
       }
 
-      document.getElementById('cart-total').textContent = `€${total.toFixed(2).replace('.', ',')}`;
+      document.getElementById('cart-total').textContent = formatPrice(total);
     }
 
     function checkout() {
@@ -1184,10 +1068,10 @@
         return;
       }
 
-      const order = cart.map(item => `${item.name} - €${item.price.toFixed(2)}`).join('%0A');
-      const total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+      const order = cart.map(item => `${item.name} - ${formatPrice(item.price)}`).join('%0A');
+      const total = formatPrice(cart.reduce((sum, item) => sum + item.price, 0));
       const subject = "Encomenda Andrea's Mystery";
-      const body = `Olá,%0A%0AGostaria de fazer a seguinte encomenda:%0A%0A${order}%0A%0ATotal: €${total}%0A%0AObrigada.`;
+      const body = `Olá,%0A%0AGostaria de fazer a seguinte encomenda:%0A%0A${order}%0A%0ATotal: ${total}%0A%0AObrigada.`;
 
       window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
     }
@@ -1198,16 +1082,6 @@
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
       window.location.href = `mailto:${contactEmail}?subject=Contacto Andrea's Mystery - ${name}&body=Nome: ${name}%0AEmail: ${email}%0A%0AMensagem:%0A${message}`;
-    }
-
-    function filterCategory(category, button) {
-      const sections = document.querySelectorAll('.category-section');
-      const buttons = document.querySelectorAll('.category-nav button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-      sections.forEach(section => {
-        section.style.display = category === 'todos' || section.dataset.category === category ? 'block' : 'none';
-      });
     }
 
     function startMusic() {
@@ -1221,6 +1095,9 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      createCategoryNav();
+      renderProducts();
+
       const music = document.getElementById('site-music');
       const button = document.getElementById('music-button');
       music.volume = 0.35;
