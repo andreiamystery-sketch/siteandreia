@@ -814,135 +814,268 @@
 
     const categories = [
       { key: 'todos', label: 'Todos' },
-      { key: 'aneis', label: 'Anéis' },
-      { key: 'colares', label: 'Colares' },
       { key: 'brincos', label: 'Brincos' },
-      { key: 'conjuntos', label: 'Conjuntos' }
+      { key: 'colares', label: 'Colares' }
     ];
 
-    function imagensProduto(pasta, produto, total) {
-      return Array.from(
-        { length: total },
-        (_, i) => `imagens/${pasta}/${produto}/${produto}-${i + 1}.png`
-      );
+    function imagensProduto(pasta, produto, total = 4, inicio = 1) {
+  const base = produto
+    ? `imagens/${pasta}/${produto}`
+    : `imagens/${pasta}`;
+
+  return Array.from(
+    { length: total },
+    (_, i) => `${base}/${i + inicio}.png`
+  );
+}
+
+    function preco(valorBase) {
+      return Number((valorBase * 3).toFixed(2));
     }
 
     const products = [
+      // ===================== BRINCOS PRESTIGE =====================
       {
-        name: 'Anel Duplo Eternidade',
-        category: 'aneis',
-        categoryLabel: 'Anel',
-        price: 69.90,
-        description: 'Anel elegante com dupla linha de brilho sofisticado.',
+        name: 'Argola Prestige Aço e Zircónias',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: preco(6.50),
+        description: 'Argolas elegantes em aço com zircónias, discretas e luminosas.',
         featured: true,
-        images: imagensProduto('eternity-premium-pack', 'anel-duplo-eternidade', 4)
+        images: imagensProduto('brincos-prestige', 'argola-prestige-aco-e-zirconias 6,5')
       },
       {
-        name: 'Anel Single Eternidade',
-        category: 'aneis',
-        categoryLabel: 'Anel',
-        price: 59.90,
-        description: 'Design minimalista com brilho refinado e presença delicada.',
-        images: imagensProduto('eternity-premium-pack', 'anel-single-eternidade', 4)
+        name: 'Brincos Prestige Círculo e Zircónias',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: preco(2.50),
+        description: 'Brincos delicados com círculo brilhante e acabamento sofisticado.',
+        images: imagensProduto('brincos-prestige', 'brincos-prestige-circulo-e-zirconias 2,5')
+      },
+      {
+        name: 'Brincos Prestige Círculo e Zircónias Aço',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: preco(3.50),
+        description: 'Versão em aço com brilho subtil e elegante.',
+        images: imagensProduto('brincos-prestige', 'brincos-prestige-circulo-e-zirconias-aço 3,5')
+      },
+      {
+        name: 'Brincos Prestige Margarida e Zircónias',
+        category: 'brincos',
+        categoryLabel: 'Brincos',
+        price: preco(2.50),
+        description: 'Design floral feminino com brilho delicado de zircónias.',
+        images: imagensProduto('brincos-prestige', 'brincos-prestige-margarida-e-zirconias 2,5')
+      },
+      
+        {
+  name: 'Argolas em Aço com Zircónias',
+  category: 'brincos',
+  categoryLabel: 'Brincos',
+  price: preco(9.90),
+  description: 'Argolas discretas e elegantes para uso diário.',
+  images: imagensProduto('brincos-sensitive 9,9', '')
+},
+      {
+  name: 'Brincos Prestige Retângulo Grande',
+  category: 'brincos',
+  categoryLabel: 'Brincos',
+  price: preco (2.50,),
+  description: 'Peça marcante com presença sofisticada e brilho elegante.',
+  images: imagensProduto('brincos-prestige', 'brincos-prestige-retangulo-grande 2,5')
+},
+
+      // ===================== BRINCOS SENSITIVE =====================
+      {
+  name: 'Argolas em Aço com Zircónias',
+  category: 'brincos',
+  categoryLabel: 'Brincos',
+  price: preco(9.90),
+  description: 'Argolas discretas e elegantes para uso diário.',
+  images: imagensProduto('brincos-sensitive 9,9', '')
+},
+
+      // ===================== COLARES DIRETOS =====================
+   {
+  name: 'Colar Delicate Inicial e Madrepérola',
+  category: 'colares',
+  categoryLabel: 'Colar',
+  price: preco(3.00),
+  description: 'Colar delicado com inicial e detalhe em madrepérola, elegante e feminino.',
+  featured: true,
+  images: imagensProduto('colar-delicate-inicial-e-madreperola 3', '')
+},
+
+      // ===================== COLARES GAMA ELEGANT =====================
+      {
+        name: 'Colar Delicado com Estrelas',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(7.50),
+        description: 'Colar delicado com estrelas e brilho subtil.',
+        images: imagensProduto('Colares-gama-elegant', 'colar-gama- delicada-com-estrelas 7,5')
+      },
+      {
+        name: 'Colar Delicado Árvore da Vida',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(6.50),
+        description: 'Símbolo elegante da árvore da vida com acabamento delicado.',
+        images: imagensProduto('Colares-gama-elegant', 'colar-gama-delicada-arvore-da-vida 6,5')
+      },
+    {
+  name: 'Colar Delicado Dois Meninos e Uma Menina',
+  category: 'colares',
+  categoryLabel: 'Colar',
+  price: preco(2.50),
+  description: 'Colar familiar simbólico com acabamento elegante.',
+  images: [
+    'imagens/Colares-gama-elegant/colar-gama-delicada-dois-meninos-e-uma-menina 2,5/1.png',
+    'imagens/Colares-gama-elegant/colar-gama-delicada-dois-meninos-e-uma-menina 2,5/2.png',
+    'imagens/Colares-gama-elegant/colar-gama-delicada-dois-meninos-e-uma-menina 2,5/3.png',
+    'imagens/Colares-gama-elegant/colar-gama-delicada-dois-meninos-e-uma-menina 2,5/4.png'
+  ]
+},
+      {
+        name: 'Colar Delicado Ponto de Luz',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(3.50),
+        description: 'Ponto de luz elegante, minimalista e intemporal.',
+        images: imagensProduto('Colares-gama-elegant', 'colar-gama-delicada-ponto-de-luz 3,5')
+      },
+      {
+        name: 'Colar Prestige Aço e Zircónias',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(6.50),
+        description: 'Colar prestige em aço com zircónias e acabamento luminoso.',
+        images: imagensProduto('Colares-gama-elegant', 'colar-prestige-aco-e-zirconias 6,5')
+      },
+
+      // ===================== COLARES GAMA PRESTIGE =====================
+      {
+        name: 'Colar Prestige Brilhante Coração',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(12.50),
+        description: 'Colar com coração brilhante e acabamento premium.',
+        images: imagensProduto('colares-gama-prestige', 'colar-gama-prestige-brilhante-coracao 12,5')
+      },
+      {
+        name: 'Colar Prestige Brilhante Quadrado',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(7.50),
+        description: 'Design geométrico sofisticado com brilho elegante.',
+        images: imagensProduto('colares-gama-prestige', 'colar-gama-prestige-brilhante-quadrado 7,5')
       },
       {
         name: 'Colar Prestige com Zircónias',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 34.90,
+        price: preco(12.50),
         description: 'Colar sofisticado com zircónias e brilho delicado.',
-        featured: true,
-        images: imagensProduto('colares-correntes-premium', 'colar-prestige-com-zirconias', 4)
+        images: imagensProduto('colares-gama-prestige', 'colar-prestige-com-zirconias 12,5')
       },
       {
-        name: 'Colar Prestige Dourado',
+        name: 'Colar Prestige Margarida e Zircónias',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 34.90,
-        description: 'Versão dourada com acabamento premium e brilho elegante.',
-        images: imagensProduto('colares-correntes-premium', 'colar-prestige-com-zirconias-dourado', 4)
+        price: preco(6.00),
+        description: 'Colar feminino com inspiração floral e brilho delicado.',
+        images: imagensProduto('colares-gama-prestige', 'colar-prestige-margarida-e-zirconias 6')
       },
+
+      // ===================== COLARES GAMA SENSITIVE =====================
       {
-        name: 'Colar Unissexo Prestige',
+        name: 'Colar Aço Coração com Brilhantes',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 39.90,
-        description: 'Colar moderno e versátil, com presença sofisticada.',
-        images: imagensProduto('colares-correntes-premium', 'colar-unissexo-prestige', 4)
+        price: preco(3.95),
+        description: 'Colar delicado em aço com coração brilhante.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-aco-coracao-com-brilhantes 3,95')
       },
       {
-        name: 'Colar Delicate Estrelas',
+        name: 'Colar Aço e Zircónias Asas',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 22.90,
-        description: 'Colar delicado com detalhe luminoso e feminino.',
-        images: imagensProduto('colares-final-pack', 'colar-delicate-com-estrelas', 4)
+        price: preco(5.00),
+        description: 'Design de asas com zircónias e acabamento elegante.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-aco-e-zirconias-asas 5')
       },
       {
-        name: 'Colar Mão de Amor',
+        name: 'Colar Aço e Zircónias Asas Cinza',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 29.90,
-        description: 'Peça simbólica elegante com acabamento dourado.',
-        images: imagensProduto('colares-final-pack', 'colar-mao-de-amor', 4)
+        price: preco(5.00),
+        description: 'Design de asas com zircónias em tom cinza sofisticado.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-aco-e-zirconias-asas-cinza 5')
       },
       {
-        name: 'Colar Rainha',
+        name: 'Colar Aço e Zircónias Dois Meninos',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 19.90,
-        description: 'Design feminino com presença sofisticada.',
-        images: imagensProduto('colares-final-pack', 'colar-rainha', 4)
+        price: preco(4.50),
+        description: 'Colar simbólico em aço com detalhe familiar.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-aco-e-zirconias-dois-meninos 4,5')
       },
       {
-        name: 'Colar Encanto',
+        name: 'Colar Aço e Zircónias Duas Meninas',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 34.90,
-        description: 'Clássico, elegante e versátil.',
-        images: imagensProduto('colares-premium-pack', 'colar-encanto', 4)
+        price: preco(4.50),
+        description: 'Colar simbólico em aço com brilho delicado.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-aco-e-zirconias-duas-meninas 4,5')
       },
       {
-        name: 'Colar Eterno',
+        name: 'Colar Aço e Zircónias Letra',
         category: 'colares',
         categoryLabel: 'Colar',
-        price: 29.90,
-        description: 'Brilho refinado com acabamento luxuoso.',
-        images: imagensProduto('colares-premium-pack', 'colar-eterno', 4)
+        price: preco(2.50),
+        description: 'Colar personalizado com letra e brilho discreto.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-aco-e-zirconias-letra 2,5')
       },
       {
-        name: 'Brincos Prestige Linha',
-        category: 'brincos',
-        categoryLabel: 'Brincos',
-        price: 12.90,
-        description: 'Brincos elegantes com linha vertical de brilho sofisticado.',
-        featured: true,
-        images: imagensProduto('brincos-final-pack', 'brincos-prestige-linha', 4)
+        name: 'Colar Curto com Olho Azul',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(3.50),
+        description: 'Colar curto com olho azul, moderno e delicado.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-curto-com-olho-azul 3,5')
       },
       {
-        name: 'Brincos Prestige Margarida',
-        category: 'brincos',
-        categoryLabel: 'Brincos',
-        price: 14.90,
-        description: 'Design floral feminino com brilho delicado.',
-        images: imagensProduto('brincos-final-pack', 'brincos-prestige-margarida-e-zirconias', 4)
+        name: 'Colar Palavra Mãe e Coração',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(4.50),
+        description: 'Colar emocional com a palavra mãe e coração.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-de-aco-palavra-mae-e-coracao 4,5')
       },
       {
-        name: 'Brincos Prestige Retângulos',
-        category: 'brincos',
-        categoryLabel: 'Brincos',
-        price: 14.90,
-        description: 'Peça marcante com design moderno e acabamento sofisticado.',
-        images: imagensProduto('brincos-final-pack', 'brincos-prestige-retangulos', 4)
+        name: 'Colar em Aço com Zircónias',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(9.90),
+        description: 'Colar em aço com zircónias, elegante para todos os dias.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-em-aco-com-zirconias 9,9')
       },
       {
-        name: 'Conjunto Eternidade',
-        category: 'conjuntos',
-        categoryLabel: 'Conjunto',
-        price: 34.90,
-        description: 'Conjunto sofisticado para ocasiões especiais.',
-        featured: true,
-        images: imagensProduto('eternity-premium-pack', 'conjunto-eternidade', 4)
+        name: 'Colar em Aço Duas Esferas Brilhantes',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(4.50),
+        description: 'Colar em aço com duas esferas brilhantes e acabamento delicado.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-em-aco-duas-esferas-brilhantes 4,5')
+      },
+      {
+        name: 'Colar em Aço Simples 3mm',
+        category: 'colares',
+        categoryLabel: 'Colar',
+        price: preco(2.50),
+        description: 'Colar simples em aço, versátil e intemporal.',
+        images: imagensProduto('colares-gama-sensitive', 'colar-em-aco-simples-3mm 2,5')
       }
     ];
 
